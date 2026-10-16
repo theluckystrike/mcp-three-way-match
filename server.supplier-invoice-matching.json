@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.theluckystrike/supplier-invoice-matching",
+  "description": "Match supplier invoice lines against purchase orders and accepted receipts by SKU, locally.",
+  "version": "0.22.6",
+  "repository": {
+    "url": "https://github.com/theluckystrike/mcp-servers",
+    "source": "github",
+    "subfolder": "servers/three-way-match"
+  },
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/theluckystrike/mcp-servers/releases/download/v0.22.6/three-way-match.mcpb",
+      "version": "0.22.6",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "MCP_LICENSE_KEY",
+          "description": "Optional offline Pro license key; removes the three-saved-report cap.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ],
+      "fileSha256": "22a7b3fa21624cacd644ab90d62b42c85b7067960dee26efd185dd751a816012"
+    }
+  ],
+  "websiteUrl": "https://mcp.zovo.one/s/three-way-match?utm_source=mcp-registry&utm_medium=registry&utm_campaign=three-way-match"
+}
