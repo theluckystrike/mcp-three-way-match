@@ -1,6 +1,6 @@
 {
   "name": "@theluckystrike/mcp-three-way-match",
-  "version": "0.22.6",
+  "version": "0.22.8",
   "description": "Match supplier invoice lines to purchase orders and accepted receipts by SKU with local evidence.",
   "type": "module",
   "bin": {
