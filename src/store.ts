@@ -14,11 +14,28 @@ export function dataDir(): string {
   if (!isAbsolute(configured)) throw new Error('XDG_DATA_HOME must be an absolute path.');
   const target = resolve(configured, 'mcp-servers', 'three-way-match');
   const root = parse(target).root;
-  let path = root;
-  for (const part of target.slice(root.length).split('/').filter(Boolean)) {
-    path = join(path, part);
-    if (!existsSync(path)) { try { mkdirSync(path, { mode: 0o700 }); } catch (e) { if (!existsSync(path)) throw e; } }
-    const st = lstatSync(path);
+  const ancestors: string[] = [];
+  let current = target;
+  // dirname understands POSIX, Windows drive and UNC roots on the host platform.
+  // Bound the walk even if a malformed path implementation never reaches its root.
+  while (current !== root) {
+    if (ancestors.length >= 256) throw new Error('Storage directory ancestry exceeds the 256-directory safety limit.');
+    ancestors.push(current);
+    const parent = dirname(current);
+    if (parent === current) throw new Error('Storage directory ancestry did not reach its filesystem root.');
+    current = parent;
+  }
+  ancestors.push(root);
+  for (const path of ancestors.reverse()) {
+    let st;
+    try { st = lstatSync(path); }
+    catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== 'ENOENT' || path === root) throw e;
+      try { mkdirSync(path, { mode: 0o700 }); }
+      catch (e) { if ((e as NodeJS.ErrnoException).code !== 'EEXIST') throw e; }
+      // An EEXIST race is safe only when the resulting object is a real directory.
+      st = lstatSync(path);
+    }
     if (!st.isDirectory() || st.isSymbolicLink()) throw new Error(`Storage directory must be a real directory: ${path}`);
   }
   return target;

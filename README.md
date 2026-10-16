@@ -47,6 +47,8 @@ Built by [theluckystrike](https://github.com/theluckystrike). MIT. Support: supp
 
 ## Install
 
+Claude Desktop: download [three-way-match.mcpb v0.22.6 (corrected storage archive)](https://github.com/theluckystrike/mcp-servers/releases/download/v0.22.7/three-way-match.mcpb) and open it. SHA-256: `afa608954d51d94b2a439874224b2bd592c51812076c86fe0d207b2c91899c14`. Other clients can use the source instructions below.
+
 Requires Node.js 18 or newer. Build from the source checkout; the npm package is not published. No API key or account is required to run the free tools.
 
 ```sh
