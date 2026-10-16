@@ -49,7 +49,7 @@ Built by [theluckystrike](https://github.com/theluckystrike). MIT. Support: supp
 
 ## Install
 
-Claude Desktop: download [three-way-match.mcpb v0.22.6 (corrected storage archive)](https://github.com/theluckystrike/mcp-servers/releases/download/v0.22.7/three-way-match.mcpb) and open it. SHA-256: `afa608954d51d94b2a439874224b2bd592c51812076c86fe0d207b2c91899c14`. Other clients can use the source instructions below.
+Claude Desktop: download [three-way-match.mcpb v0.22.8](https://github.com/theluckystrike/mcp-servers/releases/download/v0.22.8/three-way-match.mcpb) and open it. SHA-256: `6397928ec44ea9d5c406a66f4eb7aa9a2f34f5731bf8ef9972fadfdac882f040`. Other clients can use the source instructions below.
 
 Requires Node.js 18 or newer. Build from the source checkout; the npm package is not published. No API key or account is required to run the free tools.
 
@@ -85,7 +85,7 @@ claude mcp add three-way-match -- node /absolute/path/mcp-servers/servers/three-
 
 Cursor: merge the same JSON into `.cursor/mcp.json` in your project or `~/.cursor/mcp.json`. Restart your client, call `license_status`, then run the example below. A `tools/list` result alone does not verify matching.
 
-For Claude Desktop, download [three-way-match.mcpb](https://github.com/theluckystrike/mcp-servers/releases/download/v0.22.6/three-way-match.mcpb) and open it to install. SHA-256: `22a7b3fa21624cacd644ab90d62b42c85b7067960dee26efd185dd751a816012`. This is a local stdio server; no hosted endpoint is available.
+For Claude Desktop, download [three-way-match.mcpb](https://github.com/theluckystrike/mcp-servers/releases/download/v0.22.8/three-way-match.mcpb) and open it to install. SHA-256: `6397928ec44ea9d5c406a66f4eb7aa9a2f34f5731bf8ef9972fadfdac882f040`. This is a local stdio server; no hosted endpoint is available.
 
 ## Tools
 
