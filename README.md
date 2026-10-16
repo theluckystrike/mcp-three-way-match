@@ -6,6 +6,8 @@
 
 Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine: this one has no hosted endpoint, so install it from the bundle or from source.
 
+[Try the editable matching example in your browser](https://mcp.zovo.one/guides/match-supplier-invoice-purchase-order-delivery-note-in-claude#matcher-demo) before installing. No account is needed; the example checks run in your browser without uploading field values.
+
 ## Install
 
 **Claude Desktop, one click.** Download `three-way-match.mcpb` from the [bundle catalog](https://mcp.zovo.one/downloads#three-way-match) and double-click it.
